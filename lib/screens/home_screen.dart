@@ -3,7 +3,7 @@ import 'package:balance_and_wallet/widgets/animated_button.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,6 @@ class HomeScreen extends StatelessWidget {
       'Hold Wallet',
       'Lifeline Coin',
       'CashBack Coin',
-      'CashBack Coin2',
       'Card',
       'Add CashBack Coin'
     ];
