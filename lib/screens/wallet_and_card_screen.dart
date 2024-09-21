@@ -174,7 +174,7 @@ class WalletAndCardScreen extends StatelessWidget {
             Container(
               width: width,
               height: 180,
-              child: Row(
+              child: const Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
