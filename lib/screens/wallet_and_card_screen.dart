@@ -1,6 +1,8 @@
-import 'package:balance_and_wallet/common/app_image.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+
+import 'package:balance_and_wallet/common/app_image.dart';
 
 class WalletAndCardScreen extends StatelessWidget {
   const WalletAndCardScreen({super.key});
@@ -123,18 +125,101 @@ class WalletAndCardScreen extends StatelessWidget {
                 ],
               ),
             ),
+            Stack(
+              children: [
+                Container(
+                  height: 250,
+                  alignment: Alignment.center,
+                  width: width,
+                  child: Image.asset(
+                    AppImage.shopNearestPic,
+                    fit: BoxFit.fill,
+                  ),
+                ),
+                Positioned(
+                  top: 42,
+                  child: Text(
+                    '''
+                QR Code Payments
+                at near by Authorized Stores
+                ad Get 5 to 35% cash back
+                in credit coin wallet
+                ''',
+                    style: TextStyle(
+                      color: Color(0xff040851),
+                    ),
+                  ),
+                )
+              ],
+            ),
             Container(
-              height: 100,
+              padding: const EdgeInsets.only(left: 20),
               margin: const EdgeInsets.symmetric(horizontal: 10),
-              alignment: Alignment.center,
+              alignment: Alignment.centerLeft,
               width: width,
+              height: 50,
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.black, width: 1),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: const Text(
+                'Wallet and Card',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 35,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
+            Container(
+              width: width,
+              height: 180,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  RoundCard(image: AppImage.cardIcon, text: 'Card'),
+                  RoundCard(image: AppImage.udharIcon, text: 'Udhar'),
+                  RoundCard(image: AppImage.cpEmiIcon, text: 'Udhar'),
+                  RoundCard(image: AppImage.businessFundIcon, text: 'Udhar'),
+                ],
+              ),
+            )
           ],
         ),
       ),
+    );
+  }
+}
+
+class RoundCard extends StatelessWidget {
+  final String image;
+  final String text;
+  const RoundCard({
+    super.key,
+    required this.image,
+    required this.text,
+  });
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(50),
+          child: Image.asset(
+            image,
+            width: 100,
+          ),
+        ),
+        Text(
+          text,
+          style: TextStyle(
+            fontSize: 20,
+          ),
+        )
+      ],
     );
   }
 }
