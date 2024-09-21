@@ -136,7 +136,7 @@ class WalletAndCardScreen extends StatelessWidget {
                     fit: BoxFit.fill,
                   ),
                 ),
-                Positioned(
+                const Positioned(
                   top: 42,
                   child: Text(
                     '''
@@ -171,7 +171,7 @@ class WalletAndCardScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
+            SizedBox(
               width: width,
               height: 180,
               child: const Row(
@@ -215,7 +215,7 @@ class RoundCard extends StatelessWidget {
         ),
         Text(
           text,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 20,
           ),
         )
