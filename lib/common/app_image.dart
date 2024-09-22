@@ -18,4 +18,5 @@ class AppImage {
   static const String treasureIcon2 = 'assets/images/treasure-icon-2.png';
   static const String treasureIcon3 = 'assets/images/treasure-icon-3.png';
   static const String udharIcon = 'assets/images/udhar-icon.png';
+  static const String diamondIcon = 'assets/images/udhar-icon.png';
 }

@@ -19,8 +19,8 @@ class WalletAndCardScreen extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              padding: const EdgeInsets.only(left: 20),
-              margin: const EdgeInsets.only(bottom: 5),
+              padding: EdgeInsets.only(left: width * 0.04),
+              margin: EdgeInsets.only(bottom: width * 0.01),
               alignment: Alignment.centerLeft,
               width: width,
               height: height * 0.05,
@@ -28,30 +28,29 @@ class WalletAndCardScreen extends StatelessWidget {
                 color: const Color(0XffDCEBB8),
                 border: Border.all(color: Colors.black, width: 1),
               ),
-              child: const Text(
+              child: Text(
                 'Wallet & Card',
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: width * 0.07,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
             Container(
-              height: 220,
+              height: height * 0.25,
               margin: const EdgeInsets.only(bottom: 10),
               child: Image.asset(
                 AppImage.creditCardPic,
                 width: width,
-                height: 300,
                 fit: BoxFit.contain,
               ),
             ),
             Container(
-              padding: const EdgeInsets.all(5),
-              margin: const EdgeInsets.symmetric(horizontal: 10),
+              padding: EdgeInsets.all(width * 0.01),
+              margin: EdgeInsets.symmetric(horizontal: width * 0.01),
               alignment: Alignment.center,
               width: width,
-              height: 110,
+              height: height * 0.13,
               decoration: BoxDecoration(
                 color: const Color(0XffE1D7A3),
                 borderRadius: BorderRadius.circular(10),
@@ -59,25 +58,25 @@ class WalletAndCardScreen extends StatelessWidget {
               // ignore: prefer_const_constructors
               child: Column(
                 children: [
-                  const Text(
+                  Text(
                     'Lifelinekart Prime Membership',
                     style: TextStyle(
-                      fontSize: 25,
+                      fontSize: width * 0.06,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         '₹9999 / year',
                         style: TextStyle(
-                          fontSize: 15,
+                          fontSize: width * 0.05,
                           fontWeight: FontWeight.bold,
                           decoration: TextDecoration.lineThrough,
                         ),
                       ),
-                      Gap(50),
+                      Gap(width * 0.03),
                       Column(
                         children: [
                           Row(
@@ -85,15 +84,15 @@ class WalletAndCardScreen extends StatelessWidget {
                               Text(
                                 '₹3499/-',
                                 style: TextStyle(
-                                  fontSize: 15,
+                                  fontSize: width * 0.05,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                               Text(
                                 'LifetimeActivate',
                                 style: TextStyle(
-                                  color: Color(0xff1B542A),
-                                  fontSize: 20,
+                                  color: const Color(0xff1B542A),
+                                  fontSize: width * 0.04,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -104,19 +103,19 @@ class WalletAndCardScreen extends StatelessWidget {
                     ],
                   ),
                   Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 20),
+                    margin: EdgeInsets.symmetric(horizontal: width * 0.1),
                     alignment: Alignment.center,
                     width: width,
-                    height: 30,
+                    height: height * 0.04,
                     decoration: BoxDecoration(
                       color: const Color(0xff035409),
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    child: const Text(
+                    child: Text(
                       'Activate Prime Membership',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 20,
+                        fontSize: width * 0.05,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -127,7 +126,7 @@ class WalletAndCardScreen extends StatelessWidget {
             Stack(
               children: [
                 Container(
-                  height: 250,
+                  height: height * 0.25,
                   alignment: Alignment.center,
                   width: width,
                   child: Image.asset(
@@ -156,31 +155,40 @@ class WalletAndCardScreen extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 10),
               alignment: Alignment.centerLeft,
               width: width,
-              height: 50,
+              height: height * 0.06,
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.black, width: 1),
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: const Text(
+              child: Text(
                 'Wallet and Card',
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 35,
+                  fontSize: width * 0.07,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
             SizedBox(
               width: width,
-              height: 180,
-              child: const Row(
+              height: height * 0.2,
+              child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  RoundCard(image: AppImage.cardIcon, text: 'Card'),
-                  RoundCard(image: AppImage.udharIcon, text: 'Udhar'),
-                  RoundCard(image: AppImage.cpEmiIcon, text: 'Udhar'),
-                  RoundCard(image: AppImage.businessFundIcon, text: 'Udhar'),
+                  RoundCard(
+                    image: AppImage.cardIcon,
+                    text: 'Card',
+                    width: width,
+                  ),
+                  RoundCard(
+                      image: AppImage.udharIcon, text: 'Udhar', width: width),
+                  RoundCard(
+                      image: AppImage.cpEmiIcon, text: 'Udhar', width: width),
+                  RoundCard(
+                      image: AppImage.businessFundIcon,
+                      text: 'Udhar',
+                      width: width),
                 ],
               ),
             )
@@ -194,10 +202,12 @@ class WalletAndCardScreen extends StatelessWidget {
 class RoundCard extends StatelessWidget {
   final String image;
   final String text;
+  final double width;
   const RoundCard({
     super.key,
     required this.image,
     required this.text,
+    required this.width,
   });
   @override
   Widget build(BuildContext context) {
@@ -209,13 +219,13 @@ class RoundCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(50),
           child: Image.asset(
             image,
-            width: 100,
+            width: width * 0.23,
           ),
         ),
         Text(
           text,
-          style: const TextStyle(
-            fontSize: 20,
+          style: TextStyle(
+            fontSize: width * 0.05,
           ),
         )
       ],
