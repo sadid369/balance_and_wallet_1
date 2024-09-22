@@ -15,8 +15,7 @@ class WalletAndCardScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Wallet & Card'),
       ),
-      body: SizedBox(
-        width: width,
+      body: SingleChildScrollView(
         child: Column(
           children: [
             Container(

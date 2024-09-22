@@ -1,5 +1,7 @@
 class AppImage {
   static const String businessFundIcon = 'assets/images/business-fund-icon.png';
+  static const String stopHandIcon = 'assets/images/stop-hand-icon.png';
+  static const String coinCrownIcon = 'assets/images/coin-crown-icon.png';
   static const String creditCardPic = 'assets/images/credit-card-pic.png';
   static const String cardIcon = 'assets/images/card-icon.png';
   static const String cpEmiIcon = 'assets/images/cp-emi-icon.png';
