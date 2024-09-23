@@ -123,6 +123,25 @@ class WalletAndCardScreen extends StatelessWidget {
                 ],
               ),
             ),
+            Container(
+              padding: const EdgeInsets.only(left: 20),
+              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              alignment: Alignment.centerLeft,
+              width: width,
+              height: height * 0.04,
+              decoration: BoxDecoration(
+                border: Border.all(color: const Color(0xff737474), width: 1),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Text(
+                'Benefits Activate Prime Membership',
+                style: TextStyle(
+                  color: const Color(0xff0C4D72),
+                  fontSize: width * 0.05,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
             Stack(
               children: [
                 Container(
@@ -149,25 +168,6 @@ class WalletAndCardScreen extends StatelessWidget {
                   ),
                 )
               ],
-            ),
-            Container(
-              padding: const EdgeInsets.only(left: 20),
-              margin: const EdgeInsets.symmetric(horizontal: 10),
-              alignment: Alignment.centerLeft,
-              width: width,
-              height: height * 0.06,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.black, width: 1),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Text(
-                'Wallet and Card',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: width * 0.07,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
             ),
             SizedBox(
               width: width,

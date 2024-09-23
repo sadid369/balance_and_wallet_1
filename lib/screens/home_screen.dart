@@ -19,26 +19,28 @@ class HomeScreen extends StatelessWidget {
     ];
     return Scaffold(
       backgroundColor: Colors.black,
-      body: SizedBox(
-        width: MediaQuery.of(context).size.width,
-        // height: MediaQuery.of(context).size.height,
-        child: Center(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: pages
-                  .map((e) => SizedBox(
-                        width: 300,
-                        height: 100,
-                        child: AnimatedButton(
-                          text: e,
-                          onPressed: () {
-                            Navigator.pushNamed(context, e);
-                          },
-                        ),
-                      ))
-                  .toList(),
+      body: SafeArea(
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width,
+          // height: MediaQuery.of(context).size.height,
+          child: Center(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: pages
+                    .map((e) => SizedBox(
+                          width: 300,
+                          height: 100,
+                          child: AnimatedButton(
+                            text: e,
+                            onPressed: () {
+                              Navigator.pushNamed(context, e);
+                            },
+                          ),
+                        ))
+                    .toList(),
+              ),
             ),
           ),
         ),

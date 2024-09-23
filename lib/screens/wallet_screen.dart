@@ -61,7 +61,7 @@ class WalletScreen extends StatelessWidget {
                         Text(
                           '5353',
                           style: TextStyle(
-                            fontSize: width * 0.05,
+                            fontSize: width * 0.04,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -126,14 +126,14 @@ class WalletScreen extends StatelessWidget {
                       children: [
                         Image.asset(
                           AppImage.rupeeIcon,
-                          width: width * 0.2,
+                          width: width * 0.15,
                         ),
                         Column(
                           children: [
                             Text(
                               'Lifeline Cart Wallet',
                               style: TextStyle(
-                                fontSize: width * 0.048,
+                                fontSize: width * 0.05,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -163,7 +163,7 @@ class WalletScreen extends StatelessWidget {
                               borderRadius: 15,
                               borderWidth: 1,
                               elevation: 0,
-                              fontSize: 15,
+                              fontSize: width * 0.025,
                               height: height * 0.029,
                               width: width * 0.2,
                               padding: 0,
@@ -201,20 +201,35 @@ class WalletScreen extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
-                              'Withdraw',
-                              style: TextStyle(
-                                  color: const Color(0xff005CB9),
-                                  fontSize: width * 0.05,
-                                  fontWeight: FontWeight.bold),
+                            CustomButton(
+                              text: 'Withdraw',
+                              backgroundColor: Colors.white,
+                              textColor: const Color(0xff005CB9),
+                              borderColor: const Color(0xff005CB9),
+                              borderRadius: 10,
+                              borderWidth: 1,
+                              elevation: 0,
+                              fontSize: width * 0.03,
+                              height: height * 0.035,
+                              width: width * 0.3,
+                              padding: 0,
+                              margin: width * 0.005,
+                              fontWeight: FontWeight.bold,
                             ),
-                            Gap(width * 0.01),
-                            Text(
-                              'Transfer Money',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: width * 0.05,
-                                  fontWeight: FontWeight.bold),
+                            CustomButton(
+                              text: 'Transfer Money',
+                              backgroundColor: Colors.white,
+                              textColor: Colors.black,
+                              borderColor: Colors.black,
+                              borderRadius: 10,
+                              borderWidth: 1,
+                              elevation: 0,
+                              fontSize: width * 0.03,
+                              height: height * 0.035,
+                              width: width * 0.3,
+                              padding: 0,
+                              margin: width * 0.005,
+                              fontWeight: FontWeight.bold,
                             ),
                           ],
                         ),
@@ -244,8 +259,9 @@ class WalletScreen extends StatelessWidget {
               margin: EdgeInsets.symmetric(
                   horizontal: width * 0.02, vertical: width * 0.01),
               child: Container(
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 child: Column(
                   children: [
                     Row(
@@ -258,7 +274,7 @@ class WalletScreen extends StatelessWidget {
                         Text(
                           'Hold Wallet',
                           style: TextStyle(
-                            fontSize: width * 0.07,
+                            fontSize: width * 0.05,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -272,7 +288,7 @@ class WalletScreen extends StatelessWidget {
                             Text(
                               '562',
                               style: TextStyle(
-                                fontSize: width * 0.05,
+                                fontSize: width * 0.04,
                                 fontWeight: FontWeight.bold,
                                 color: const Color(
                                   0xffE53230,
@@ -349,14 +365,14 @@ class WalletScreen extends StatelessWidget {
                                   Text(
                                     'Lifeline Coin',
                                     style: TextStyle(
-                                      fontSize: width * 0.07,
+                                      fontSize: width * 0.05,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                   Text(
                                     '770',
                                     style: TextStyle(
-                                      fontSize: width * 0.05,
+                                      fontSize: width * 0.04,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.black,
                                     ),
@@ -476,7 +492,7 @@ class WalletScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          '11 Sep 2023 To 11 oct 2023available',
+                          '11 Sep 2023 To 11 oct 2023',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: width * 0.035,
@@ -518,10 +534,10 @@ class WalletScreen extends StatelessWidget {
                       children: [
                         Image.asset(
                           AppImage.coinCrownIcon,
-                          width: width * 0.15,
+                          width: width * 0.14,
                         ),
                         SizedBox(
-                          width: width * 0.7,
+                          width: width * 0.8,
                           child: Column(
                             children: [
                               Row(
@@ -531,11 +547,11 @@ class WalletScreen extends StatelessWidget {
                                   Text(
                                     'CashBack Coin',
                                     style: TextStyle(
-                                        fontSize: width * 0.04,
+                                        fontSize: width * 0.05,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black),
                                   ),
-                                  Gap(width * 0.01),
+                                  // Gap(width * 0.01),
                                   CustomButton(
                                       text: 'Add Credit Coin',
                                       backgroundColor: Colors.white,
@@ -544,11 +560,11 @@ class WalletScreen extends StatelessWidget {
                                       borderRadius: 10,
                                       borderWidth: 1,
                                       elevation: 0,
-                                      fontSize: width * 0.022,
-                                      height: height * 0.025,
-                                      width: width * 0.25,
+                                      fontSize: width * 0.02,
+                                      height: height * 0.022,
+                                      width: width * 0.20,
                                       padding: 0,
-                                      margin: width * 0.01,
+                                      margin: width * 0.005,
                                       fontWeight: FontWeight.normal),
                                   Image.asset(
                                     AppImage.coinCrownIcon,
@@ -557,7 +573,7 @@ class WalletScreen extends StatelessWidget {
                                   Text(
                                     '15070',
                                     style: TextStyle(
-                                      fontSize: width * 0.027,
+                                      fontSize: width * 0.04,
                                       fontWeight: FontWeight.bold,
                                       color: const Color(
                                         0xffE53230,
@@ -582,7 +598,7 @@ class WalletScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          '11 Sep 2023 To 11 oct 2023available',
+                          '11 Sep 2023 To 11 oct 2023',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: width * 0.035,
