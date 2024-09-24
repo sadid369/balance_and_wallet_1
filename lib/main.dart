@@ -1,6 +1,5 @@
 import 'package:balance_and_wallet/common/constants.dart';
 import 'package:balance_and_wallet/my_routes.dart';
-import 'package:balance_and_wallet/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

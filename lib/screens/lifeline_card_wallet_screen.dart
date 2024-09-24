@@ -3,6 +3,60 @@ import 'package:flutter/material.dart';
 
 import 'package:balance_and_wallet/common/app_image.dart';
 import 'package:balance_and_wallet/widgets/custom_button.dart';
+import 'package:gap/gap.dart';
+
+List<Map<String, dynamic>> data = [
+  {
+    'title': 'Send To Shivraj Patil',
+    'txnDescription': 'Debited from Lifeline Card Wallet',
+    'subTitle': 'Cashback Coin Earned',
+    'date': '23rd Feb, 2024 . 11.35PM',
+    'txnId': 'T67642578547',
+    'amount': '-999',
+    'coinAmount': '+00.00',
+    'txnType': 'Send',
+  },
+  {
+    'title': 'Received From Shivraj Patil',
+    'txnDescription': 'Credited To Lifeline Card Wallet',
+    'subTitle': 'Cashback Coin Earned',
+    'date': '23rd Feb, 2024 . 11.35PM',
+    'txnId': 'T67642578547',
+    'amount': '+999',
+    'coinAmount': '+00.00',
+    'txnType': 'Received',
+  },
+  {
+    'title': 'Send To Bnak',
+    'txnDescription': 'Debited from Lifeline Card Wallet',
+    'subTitle': 'Cashback Coin Earned',
+    'date': '23rd Feb, 2024 . 11.35PM',
+    'txnId': 'T67642578547',
+    'amount': '-999',
+    'coinAmount': '+00.00',
+    'txnType': 'Send',
+  },
+  {
+    'title': 'Rewarded From Refferal',
+    'txnDescription': 'Credited To Lifeline Card Wallet',
+    'subTitle': 'Cashback Coin Earned',
+    'date': '23rd Feb, 2024 . 11.35PM',
+    'txnId': 'T67642578547',
+    'amount': '+1000',
+    'coinAmount': '+00.00',
+    'txnType': 'Rewarded',
+  },
+  {
+    'title': 'Debited To Udhar',
+    'txnDescription': 'Debited from Lifeline Card Wallet',
+    'subTitle': 'Cashback Coin Earned',
+    'date': '23rd Feb, 2024 . 11.35PM',
+    'txnId': 'T67642578547',
+    'amount': '-999',
+    'coinAmount': '+00.00',
+    'txnType': 'Debited',
+  },
+];
 
 class LifelineCardWalletScreen extends StatelessWidget {
   const LifelineCardWalletScreen({super.key});
@@ -123,9 +177,19 @@ class LifelineCardWalletScreen extends StatelessWidget {
                   ),
                   Expanded(
                     child: ListView.builder(
-                      itemCount: 4,
+                      itemCount: data.length,
                       itemBuilder: (context, index) {
-                        return WalletCard(width: width, height: height);
+                        return WalletCard(
+                            height: height,
+                            width: width,
+                            title: data[index]['title'],
+                            subTitle: data[index]['subTitle'],
+                            date: data[index]['date'],
+                            txnId: data[index]['txnId'],
+                            amount: data[index]['amount'],
+                            coinAmount: data[index]['coinAmount'],
+                            txnType: data[index]['txnType'],
+                            txnDescription: data[index]['txnDescription']);
                       },
                     ),
                   )
@@ -142,30 +206,139 @@ class LifelineCardWalletScreen extends StatelessWidget {
 class WalletCard extends StatelessWidget {
   final double height;
   final double width;
+  final String title;
+  final String subTitle;
+  final String date;
+  final String txnId;
+  final String amount;
+  final String coinAmount;
+  final String txnType;
+  final String txnDescription;
 
   const WalletCard({
-    Key? key,
+    super.key,
     required this.height,
     required this.width,
-  }) : super(key: key);
+    required this.title,
+    required this.subTitle,
+    required this.date,
+    required this.txnId,
+    required this.amount,
+    required this.coinAmount,
+    required this.txnType,
+    required this.txnDescription,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(
-          horizontal: width * 0.02, vertical: height * 0.01),
+          horizontal: width * 0.01, vertical: height * 0.007),
       width: width,
-      height: height * 0.1,
+      height: height * 0.08,
       decoration: BoxDecoration(
-        color: Colors.black38,
+        color: Colors.white,
         border: Border.all(
           color: Colors.black,
           width: 1,
         ),
         borderRadius: BorderRadius.circular(10),
       ),
-      child: Center(
-        child: Text('Box'),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Container(
+                width: width * 0.085,
+                padding: EdgeInsets.all(width * 0.01),
+                child: txnType == 'Rewarded'
+                    ? Image.asset(AppImage.rewardIcon)
+                    : Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            txnType == 'Debited'
+                                ? AppImage.walletIcon
+                                : AppImage.profileImageIcon,
+                          ),
+                          Gap(width * 0.008),
+                          Image.asset(
+                            txnType == 'Send' || txnType == 'Debited'
+                                ? AppImage.sendIcon
+                                : AppImage.receiveIcon,
+                          ),
+                        ],
+                      ),
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontSize: width * 0.03,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    subTitle,
+                    style: TextStyle(
+                      fontSize: width * 0.02,
+                    ),
+                  ),
+                  Text(
+                    date,
+                    style: TextStyle(
+                      fontSize: width * 0.02,
+                    ),
+                  ),
+                  Text(
+                    txnId,
+                    style: TextStyle(
+                      fontSize: width * 0.02,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          Container(
+            margin: EdgeInsets.only(right: width * 0.04),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  amount,
+                  style: TextStyle(
+                    fontSize: width * 0.03,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  coinAmount,
+                  style: TextStyle(
+                    fontSize: width * 0.02,
+                  ),
+                ),
+                Text(
+                  '',
+                  style: TextStyle(
+                    fontSize: width * 0.02,
+                  ),
+                ),
+                Text(
+                  txnDescription,
+                  style: TextStyle(
+                    fontSize: width * 0.02,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
