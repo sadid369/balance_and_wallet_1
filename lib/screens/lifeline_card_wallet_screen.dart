@@ -12,8 +12,8 @@ List<Map<String, dynamic>> data = [
     'subTitle': 'Cashback Coin Earned',
     'date': '23rd Feb, 2024 . 11.35PM',
     'txnId': 'T67642578547',
-    'amount': '-999',
-    'coinAmount': '+00.00',
+    'amount': -999,
+    'coinAmount': 00.00,
     'txnType': 'Send',
   },
   {
@@ -22,8 +22,8 @@ List<Map<String, dynamic>> data = [
     'subTitle': 'Cashback Coin Earned',
     'date': '23rd Feb, 2024 . 11.35PM',
     'txnId': 'T67642578547',
-    'amount': '+999',
-    'coinAmount': '+00.00',
+    'amount': 999,
+    'coinAmount': 00.00,
     'txnType': 'Received',
   },
   {
@@ -32,8 +32,8 @@ List<Map<String, dynamic>> data = [
     'subTitle': 'Cashback Coin Earned',
     'date': '23rd Feb, 2024 . 11.35PM',
     'txnId': 'T67642578547',
-    'amount': '-999',
-    'coinAmount': '+00.00',
+    'amount': -999,
+    'coinAmount': 00.00,
     'txnType': 'Send',
   },
   {
@@ -42,8 +42,8 @@ List<Map<String, dynamic>> data = [
     'subTitle': 'Cashback Coin Earned',
     'date': '23rd Feb, 2024 . 11.35PM',
     'txnId': 'T67642578547',
-    'amount': '+1000',
-    'coinAmount': '+00.00',
+    'amount': 1000,
+    'coinAmount': 00.00,
     'txnType': 'Rewarded',
   },
   {
@@ -52,8 +52,8 @@ List<Map<String, dynamic>> data = [
     'subTitle': 'Cashback Coin Earned',
     'date': '23rd Feb, 2024 . 11.35PM',
     'txnId': 'T67642578547',
-    'amount': '-999',
-    'coinAmount': '+00.00',
+    'amount': -999,
+    'coinAmount': 00.00,
     'txnType': 'Debited',
   },
 ];
@@ -294,8 +294,8 @@ class WalletCard extends StatelessWidget {
   final String subTitle;
   final String date;
   final String txnId;
-  final String amount;
-  final String coinAmount;
+  final num amount;
+  final num coinAmount;
   final String txnType;
   final String txnDescription;
 
@@ -323,7 +323,7 @@ class WalletCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(
-          color: Colors.black,
+          color: amount < 0 ? Color(0xffFF1919) : Color(0xff0BBC18),
           width: 1,
         ),
         borderRadius: BorderRadius.circular(10),
@@ -395,15 +395,17 @@ class WalletCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  amount,
+                  '${amount < 0 ? '' : '+'} $amount'.toString(),
                   style: TextStyle(
+                    color: amount < 0 ? Color(0xffFF1919) : Color(0xff0BBC18),
                     fontSize: width * 0.03,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
-                  coinAmount,
+                  '$coinAmount'.toString(),
                   style: TextStyle(
+                    color: Colors.black,
                     fontSize: width * 0.02,
                   ),
                 ),
