@@ -75,6 +75,90 @@ class LifelineCardWalletScreen extends StatelessWidget {
             decoration: const BoxDecoration(
               color: Color(0xffD472E4),
             ),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          child: Image.asset(
+                            AppImage.arrowBackIcon,
+                          ),
+                        ),
+                        Gap(width * 0.07),
+                        Text(
+                          'Lifeline Card Wallet',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: width * 0.07,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+                Text(
+                  '₹5326.00',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: width * 0.12,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: width * 0.02),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Upcoming Udhar',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: width * 0.05,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        'Upcoming CP.EMI',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: width * 0.05,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Gap(width * 0.04),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: width * 0.02),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        '₹4999.OO',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: width * 0.05,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        '₹4999.OO',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: width * 0.05,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
           Positioned(
             top: 250,
