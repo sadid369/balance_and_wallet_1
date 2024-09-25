@@ -84,7 +84,7 @@ class LifelineCardWalletScreen extends StatelessWidget {
                       children: [
                         Container(
                           child: Image.asset(
-                            AppImage.arrowBackIcon,
+                            AppImage.arrowBackPurpleIcon,
                           ),
                         ),
                         Gap(width * 0.07),

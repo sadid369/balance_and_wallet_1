@@ -1,7 +1,11 @@
 class AppImage {
   static const String businessFundIcon = 'assets/images/business-fund-icon.png';
-  static const String arrowBackIcon = 'assets/images/arrow-back-icon.png';
+  static const String arrowBackPurpleIcon =
+      'assets/images/arrow-back-purple-icon.png';
+  static const String arrowBackRedIcon =
+      'assets/images/arrow-back-red-icon.png';
   static const String walletIcon = 'assets/images/wallet-icon.png';
+  static const String mobileIcon = 'assets/images/mobile-icon.png';
   static const String filterMenuIcon = 'assets/images/filter-menu-icon.png';
   static const String stopHandIcon = 'assets/images/stop-hand-icon.png';
   static const String coinCrownIcon = 'assets/images/coin-crown-icon.png';
