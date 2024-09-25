@@ -386,27 +386,21 @@ class WalletCard extends StatelessWidget {
           Row(
             children: [
               Container(
-                width: width * 0.085,
-                padding: EdgeInsets.all(width * 0.01),
-                child: txnType == 'Rewarded'
-                    ? Image.asset(AppImage.rewardIcon)
-                    : Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            txnType == 'Debited'
-                                ? AppImage.walletIcon
-                                : AppImage.profileImageIcon,
-                          ),
-                          Gap(width * 0.008),
-                          Image.asset(
-                            txnType == 'Send' || txnType == 'Debited'
-                                ? AppImage.sendIcon
-                                : AppImage.receiveIcon,
-                          ),
-                        ],
+                  width: width * 0.085,
+                  padding: EdgeInsets.all(width * 0.01),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        width: width * 0.06,
+                        child: Image.asset(
+                          AppImage.coinIcon,
+                        ),
                       ),
-              ),
+                      Gap(width * 0.008),
+                      Image.asset(AppImage.receiveIcon),
+                    ],
+                  )),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
