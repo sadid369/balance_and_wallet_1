@@ -7,6 +7,8 @@ class AppImage {
   static const String walletIcon = 'assets/images/wallet-icon.png';
   static const String arrowBackYellowIcon =
       'assets/images/arrow-back-yellow-icon.png';
+  static const String arrowBackGreenIcon =
+      'assets/images/arrow-back-green-icon.png';
   static const String mobileIcon = 'assets/images/mobile-icon.png';
   static const String coinIcon = 'assets/images/coin-icon.png';
   static const String filterMenuIcon = 'assets/images/filter-menu-icon.png';
