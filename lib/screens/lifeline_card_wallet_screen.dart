@@ -397,7 +397,9 @@ class WalletCard extends StatelessWidget {
                 Text(
                   '${amount < 0 ? '' : '+'} $amount'.toString(),
                   style: TextStyle(
-                    color: amount < 0 ? Color(0xffFF1919) : Color(0xff0BBC18),
+                    color: amount < 0
+                        ? const Color(0xffFF1919)
+                        : const Color(0xff0BBC18),
                     fontSize: width * 0.03,
                     fontWeight: FontWeight.bold,
                   ),

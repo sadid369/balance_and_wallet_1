@@ -15,7 +15,8 @@ class HomeScreen extends StatelessWidget {
       'Lifeline Coin',
       'CashBack Coin',
       'Card',
-      'Add CashBack Coin'
+      'Add CashBack Coin',
+      'Card New'
     ];
     return Scaffold(
       backgroundColor: Colors.black,

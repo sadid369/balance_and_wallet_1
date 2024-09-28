@@ -1,10 +1,15 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 // import 'package:fl_chart_app/presentation/resources/app_resources.dart';
 // import 'package:fl_chart_app/util/extensions/color_extensions.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 class BarChartSample2 extends StatefulWidget {
-  BarChartSample2({super.key});
+  final double width;
+  BarChartSample2({
+    Key? key,
+    required this.width,
+  }) : super(key: key);
   final Color leftBarColor = Color(0xff004991);
   final Color rightBarColor = Color(0xff6E97C4);
   final Color avgColor = Color(0xff98BED4);
@@ -14,6 +19,7 @@ class BarChartSample2 extends StatefulWidget {
 }
 
 class BarChartSample2State extends State<BarChartSample2> {
+  //  double screenWidth = widget.width;
   final double width = 7;
 
   late List<BarChartGroupData> rawBarGroups;
@@ -77,7 +83,7 @@ class BarChartSample2State extends State<BarChartSample2> {
               ],
             ),
             const SizedBox(
-              height: 38,
+              height: 60,
             ),
             Expanded(
               child: BarChart(

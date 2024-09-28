@@ -7,3 +7,4 @@ const String lifelineCoin = 'Lifeline Coin';
 const String cashBackCoin = 'CashBack Coin';
 const String card = 'Card';
 const String addCashBackCoin = 'Add CashBack Coin';
+const String cardNew = 'Card New';

@@ -1,5 +1,6 @@
 import 'package:balance_and_wallet/common/constants.dart';
 import 'package:balance_and_wallet/screens/add_cash_back_coin_screen.dart';
+import 'package:balance_and_wallet/screens/card_new.dart';
 import 'package:balance_and_wallet/screens/card_screen.dart';
 import 'package:balance_and_wallet/screens/cash_back_coin_screen.dart';
 import 'package:balance_and_wallet/screens/hold_wallet_screen.dart';
@@ -44,6 +45,14 @@ class MyRoutes {
       case addCashBackCoin:
         return MaterialPageRoute(
           builder: (context) => const AddCashBackCoinScreen(),
+        );
+      case addCashBackCoin:
+        return MaterialPageRoute(
+          builder: (context) => const AddCashBackCoinScreen(),
+        );
+      case cardNew:
+        return MaterialPageRoute(
+          builder: (context) => const CardNewScreen(),
         );
       default:
         return MaterialPageRoute(

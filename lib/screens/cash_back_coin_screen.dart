@@ -142,7 +142,9 @@ class CashBackCoinScreen extends StatelessWidget {
                   ),
                   Container(
                     height: height * 0.3,
-                    child: BarChartSample2(),
+                    child: BarChartSample2(
+                      width: width,
+                    ),
                   )
                 ],
               ),
