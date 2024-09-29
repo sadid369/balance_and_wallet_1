@@ -31,4 +31,8 @@ class AppImage {
   static const String treasureIcon3 = 'assets/images/treasure-icon-3.png';
   static const String udharIcon = 'assets/images/udhar-icon.png';
   static const String diamondIcon = 'assets/images/diamond-pic.png';
+  static const String happyFamily = 'assets/images/happy-family.png';
+  static const String businessLoan = 'assets/images/business-loan.png';
+  static const String shoppingOnline = 'assets/images/shopping-online.png';
+  static const String referAndEarn = 'assets/images/refer-and-earn.png';
 }

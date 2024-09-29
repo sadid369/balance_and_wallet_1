@@ -2,6 +2,41 @@ import 'package:balance_and_wallet/common/app_image.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+List<Map<String, dynamic>> data = [
+  {
+    'image': AppImage.businessLoan,
+    'title': 'CardAbout Lifeline card',
+  },
+  {
+    'image': AppImage.referAndEarn,
+    'title': 'How to Get more card limit',
+  },
+  {
+    'image': AppImage.shoppingOnline,
+    'title': 'Benefits Lifeline card',
+  },
+  {
+    'image': AppImage.happyFamily,
+    'title': 'Lifeline card Is Your Lifeline',
+  },
+  {
+    'image': AppImage.businessLoan,
+    'title': 'CardAbout Lifeline card',
+  },
+  {
+    'image': AppImage.referAndEarn,
+    'title': 'How to Get more card limit',
+  },
+  {
+    'image': AppImage.shoppingOnline,
+    'title': 'Benefits Lifeline card',
+  },
+  {
+    'image': AppImage.happyFamily,
+    'title': 'Lifeline card Is Your Lifeline',
+  },
+];
+
 class CardNewScreen extends StatelessWidget {
   const CardNewScreen({super.key});
 
@@ -327,16 +362,26 @@ class CardNewScreen extends StatelessWidget {
             // height: height * 0.2,
             child: GridView.builder(
               shrinkWrap: true,
-              itemCount: 4,
+              itemCount: data.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: width * 0.005,
-                crossAxisSpacing: height * 0.005,
-              ),
+                  crossAxisCount: 2,
+                  mainAxisSpacing: width * 0.005,
+                  crossAxisSpacing: height * 0.005,
+                  childAspectRatio: 1.6),
               itemBuilder: (context, index) {
                 return Container(
-                  height: 2,
-                  color: Colors.red,
+                  child: Column(
+                    children: [
+                      Image.asset(data[index]['image']),
+                      Text(
+                        data[index]['title'],
+                        style: TextStyle(
+                          fontSize: width * 0.03,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
                 );
               },
             ),
