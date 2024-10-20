@@ -316,16 +316,17 @@ class LifelineCoinScreen extends StatelessWidget {
                       itemCount: data.length,
                       itemBuilder: (context, index) {
                         return WalletCard(
-                            height: height,
-                            width: width,
-                            title: data[index]['title'],
-                            subTitle: data[index]['subTitle'],
-                            date: data[index]['date'],
-                            txnId: data[index]['txnId'],
-                            amount: data[index]['amount'],
-                            coinAmount: data[index]['coinAmount'],
-                            txnType: data[index]['txnType'],
-                            txnDescription: data[index]['txnDescription']);
+                          height: height,
+                          width: width,
+                          title: data[index]['title'],
+                          subTitle: data[index]['subTitle'],
+                          date: data[index]['date'],
+                          txnId: data[index]['txnId'],
+                          amount: data[index]['amount'],
+                          coinAmount: data[index]['coinAmount'],
+                          txnType: data[index]['txnType'],
+                          txnDescription: data[index]['txnDescription'],
+                        );
                       },
                     ),
                   )
